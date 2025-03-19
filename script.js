@@ -14,6 +14,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Display subjects as cards
   const subjectContainer = document.getElementById('subject-container');
+  if (!exam || !studentClass) {
+    alert("Invalid selection. Please go back and select your exam and class.");
+    return;
+  }
+
   if (subjectContainer && subjects[exam]) {
     subjects[exam].forEach(subject => {
       const card = document.createElement('div');
