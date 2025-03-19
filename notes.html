@@ -14,16 +14,24 @@
   </header>
   <main>
     <div class="card-container">
-      <div class="card" onclick="location.href='chapter1.pdf'">
+      <div class="card" onclick="downloadNotes(1)">
         <h2>Chapter 1</h2>
         <p>Download PDF</p>
       </div>
-      <div class="card" onclick="location.href='chapter2.pdf'">
+      <div class="card" onclick="downloadNotes(2)">
         <h2>Chapter 2</h2>
         <p>Download PDF</p>
       </div>
-      <!-- Add more chapters as needed -->
     </div>
   </main>
+  <script>
+    function downloadNotes(chapter) {
+      const urlParams = new URLSearchParams(window.location.search);
+      const exam = urlParams.get('exam');
+      const studentClass = urlParams.get('class');
+      const subject = urlParams.get('subject');
+      location.href = `notes/${exam}_${studentClass}_${subject}_chapter${chapter}.pdf`;
+    }
+  </script>
 </body>
 </html>
