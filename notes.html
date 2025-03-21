@@ -9,10 +9,18 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="class.html?exam=IIT">IIT</a>
+    <a href="class.html?exam=NEET">NEET</a>
+    <a href="class.html?exam=NTSE">NTSE</a>
+    <a href="class.html?exam=Olympiad">Olympiad</a>
+  </nav>
   <header>
-    <h1>Chapter-wise Notes</h1>
+    <h1>Chapter-wise Notes and Tests</h1>
   </header>
   <main>
+    <h2>Read and Download Notes</h2>
     <div class="card-container">
       <div class="card" onclick="downloadNotes(1)">
         <h2>Chapter 1</h2>
@@ -23,7 +31,30 @@
         <p>Download PDF</p>
       </div>
     </div>
+
+    <h2>Chapter-wise Tests</h2>
+    <div class="card-container">
+      <div class="card" onclick="location.href='test.html?chapter=1'">
+        <h2>Chapter 1 Test</h2>
+        <p>Start Test</p>
+      </div>
+      <div class="card" onclick="location.href='test.html?chapter=2'">
+        <h2>Chapter 2 Test</h2>
+        <p>Start Test</p>
+      </div>
+    </div>
+
+    <div class="pagination">
+      <a href="#">&laquo;</a>
+      <a href="#" class="active">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <a href="#">&raquo;</a>
+    </div>
   </main>
+  <footer>
+    <p>&copy; 2023 ExamPreparationHub. All rights reserved.</p>
+  </footer>
   <script>
     function downloadNotes(chapter) {
       const urlParams = new URLSearchParams(window.location.search);
