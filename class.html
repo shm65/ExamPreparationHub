@@ -9,6 +9,13 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="class.html?exam=IIT">IIT</a>
+    <a href="class.html?exam=NEET">NEET</a>
+    <a href="class.html?exam=NTSE">NTSE</a>
+    <a href="class.html?exam=Olympiad">Olympiad</a>
+  </nav>
   <header>
     <h1>Select Your Class</h1>
   </header>
@@ -28,6 +35,9 @@
       </div>
     </div>
   </main>
+  <footer>
+    <p>&copy; 2023 ExamPreparationHub. All rights reserved.</p>
+  </footer>
   <script>
     function getExam() {
       const urlParams = new URLSearchParams(window.location.search);
