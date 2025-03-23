@@ -33,3 +33,10 @@ document.addEventListener("DOMContentLoaded", function () {
     console.error("Element with ID 'subject-container' not found or invalid exam type.");
   }
 });
+function searchNotes(event) {
+  event.preventDefault();
+  const searchQuery = event.target.search.value;
+  if (searchQuery) {
+    location.href = `search.html?query=${encodeURIComponent(searchQuery)}`;
+  }
+}
