@@ -1,3 +1,4 @@
+/* General Styles */
 body {
   font-family: 'Arial', sans-serif;
   margin: 0;
@@ -7,153 +8,6 @@ body {
   line-height: 1.6;
 }
 
-header {
-  background-color: #6200ea;
-  color: white;
-  padding: 20px;
-  text-align: center;
-}
-
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #3700b3;
-  padding: 10px 20px;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  margin: 0 15px;
-  font-size: 1.1rem;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
-.hero {  
-  background: url('https://i.imgur.com/DcL68jL.jpeg') no-repeat center center/cover;
-  color: black;
-  padding: 100px 20px;
-  text-align: center;
-}
-
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 20px;
-}
-
-.card {
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 10px;
-  padding: 20px;
-  width: 200px;
-  text-align: center;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-
-.card:hover {
-  transform: scale(1.05);
-}
-
-.card h2 {
-  margin: 0;
-  font-size: 1.5rem;
-}
-
-.card p {
-  font-size: 0.9rem;
-  color: #666;
-}
-
-/* Different colors for cards */
-.card:nth-child(1) {
-  background-color: #ffebee; /* Light red */
-}
-
-.card:nth-child(2) {
-  background-color: #e3f2fd; /* Light blue */
-}
-
-.card:nth-child(3) {
-  background-color: #e8f5e9; /* Light green */
-}
-
-.card:nth-child(4) {
-  background-color: #fff3e0; /* Light orange */
-}
-
-footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 20px;
-  margin-top: 40px;
-}
-
-.pagination {
-  display: flex;
-  justify-content: center;
-  margin: 20px 0;
-}
-
-.pagination a {
-  color: #6200ea;
-  padding: 8px 16px;
-  text-decoration: none;
-  transition: background-color 0.3s;
-}
-
-.pagination a.active {
-  background-color: #6200ea;
-  color: white;
-}
-
-.pagination a:hover:not(.active) {
-  background-color: #ddd;
-}
-
-@media (max-width: 600px) {
-  .card-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  nav a {
-    margin: 10px 0;
-  }
-
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-}
 /* Ensure the body and html take up full height */
 html, body {
   height: 100%;
@@ -172,14 +26,15 @@ main {
   flex: 1;
 }
 
-/* Footer stays at the bottom */
-footer {
-  background-color: #333;
+/* Header Styles */
+header {
+  background-color: #6200ea;
   color: white;
-  text-align: center;
   padding: 20px;
-  margin-top: auto; /* Push footer to the bottom */
+  text-align: center;
 }
+
+/* Navigation Bar Styles */
 nav {
   display: flex;
   justify-content: space-between;
@@ -232,4 +87,148 @@ nav a:hover {
 
 .search-form button:hover {
   background-color: #7c4dff;
+}
+
+/* Hero Section Styles */
+.hero {
+  background: url('https://i.imgur.com/DcL68jL.jpeg') no-repeat center center/cover;
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+  z-index: 1;
+}
+
+.hero h1, .hero p {
+  position: relative;
+  z-index: 2; /* Ensure text is above the overlay */
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Card Container Styles */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Different colors for cards */
+.card:nth-child(1) {
+  background-color: #ffebee; /* Light red */
+}
+
+.card:nth-child(2) {
+  background-color: #e3f2fd; /* Light blue */
+}
+
+.card:nth-child(3) {
+  background-color: #e8f5e9; /* Light green */
+}
+
+.card:nth-child(4) {
+  background-color: #fff3e0; /* Light orange */
+}
+
+/* Footer Styles */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: auto; /* Push footer to the bottom */
+}
+
+/* Pagination Styles */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.pagination a {
+  color: #6200ea;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.pagination a.active {
+  background-color: #6200ea;
+  color: white;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav a {
+    margin: 10px 0;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
 }
