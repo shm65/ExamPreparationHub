@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Search for notes and tests for IIT, NEET, NTSE, and Olympiad students.">
+  <meta name="keywords" content="IIT, NEET, NTSE, Olympiad, notes, tests, student resources">
+  <title>Search Results</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <nav>
+    <div class="nav-left">
+      <img src="logo.png" alt="ExamPreparationHub Logo" class="logo">
+      <a href="index.html">Home</a>
+      <a href="class.html?exam=IIT">IIT</a>
+      <a href="class.html?exam=NEET">NEET</a>
+      <a href="class.html?exam=NTSE">NTSE</a>
+      <a href="class.html?exam=Olympiad">Olympiad</a>
+    </div>
+    <div class="nav-right">
+      <form class="search-form" onsubmit="searchNotes(event)">
+        <input type="text" placeholder="Search notes..." name="search">
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+  <header>
+    <h1>Search Results</h1>
+  </header>
+  <main>
+    <div class="card-container" id="search-results">
+      <!-- Search results will be dynamically added here using JavaScript -->
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2023 ExamPreparationHub. All rights reserved.</p>
+  </footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const urlParams = new URLSearchParams(window.location.search);
+      const query = urlParams.get('query');
+      const searchResults = document.getElementById('search-results');
+
+      if (query) {
+        // Simulate search results (replace with actual search logic)
+        const results = [
+          { title: 'Math Chapter 1 Notes', link: 'notes.html?exam=IIT&class=10&subject=Math' },
+          { title: 'Physics Chapter 2 Notes', link: 'notes.html?exam=NEET&class=12&subject=Physics' }
+        ];
+
+        results.forEach(result => {
+          const card = document.createElement('div');
+          card.className = 'card';
+          card.innerHTML = `<h2>${result.title}</h2>`;
+          card.onclick = () => {
+            location.href = result.link;
+          };
+          searchResults.appendChild(card);
+        });
+      } else {
+        searchResults.innerHTML = '<p>No search query provided.</p>';
+      }
+    });
+  </script>
+</body>
+</html>
