@@ -11,12 +11,21 @@
 </head>
 <body>
   <nav>
+  <div class="nav-left">
+    <img src="logo.png" alt="ExamPreparationHub Logo" class="logo">
     <a href="index.html">Home</a>
     <a href="class.html?exam=IIT">IIT</a>
     <a href="class.html?exam=NEET">NEET</a>
     <a href="class.html?exam=NTSE">NTSE</a>
     <a href="class.html?exam=Olympiad">Olympiad</a>
-  </nav>
+  </div>
+  <div class="nav-right">
+    <form class="search-form" onsubmit="searchNotes(event)">
+      <input type="text" placeholder="Search notes..." name="search">
+      <button type="submit">Search</button>
+    </form>
+  </div>
+</nav>
   <header>
     <h1>Chapter-wise Notes and Tests</h1>
   </header>
