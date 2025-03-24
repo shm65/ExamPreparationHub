@@ -232,3 +232,31 @@ footer {
     font-size: 1rem;
   }
 }
+/* Circular Logo */
+.logo {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%; /* Makes the logo circular */
+  object-fit: cover; /* Ensures the image fits well */
+  margin-right: 20px;
+  transition: transform 0.2s; /* Adds a hover effect */
+}
+
+.logo:hover {
+  transform: scale(1.1); /* Slightly enlarges the logo on hover */
+}
+
+/* Navigation Bar Links */
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 1rem;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Light background on hover */
+}
